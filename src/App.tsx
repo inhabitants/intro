@@ -7,6 +7,9 @@ function App() {
   const animeImages = [
     // First row images (17 unique)
     "/images/pinto1.jpg",
+    "/images/pinto2.jpg",
+    "/images/pinto3.jpg",
+    "/images/pinto4.jpg",
     "https://images.unsplash.com/photo-1580477667995-2b94f01c9516?q=80&w=500&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=500&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?q=80&w=500&auto=format&fit=crop",

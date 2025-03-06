@@ -176,16 +176,16 @@ function App() {
       </section>
 
       {/* HelenAI Section */}
-      <section className="py-20">
+      <section className="py-20 helen-section">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4 magical-text">HelenAI</h2>
           <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">
             Meet Helen, your personal pinto companion powered by advanced AI.
           </p>
           
-          <div className="video-grid">
+          <div className="helen-video-grid">
             {/* Vídeos da Helen */}
-            <div className="video-container">
+            <div className="video-container helen-video">
               <video
                 src="/videos/helenskate.mp4"
                 autoPlay
@@ -195,7 +195,7 @@ function App() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="video-container">
+            <div className="video-container helen-video">
               <video
                 src="/videos/Helenacademia.mp4"
                 autoPlay
@@ -205,29 +205,9 @@ function App() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="video-container">
+            <div className="video-container helen-video">
               <video
                 src="/videos/helencasa.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="video-container">
-              <video
-                src="/videos/helenskate.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="video-container">
-              <video
-                src="/videos/helenskate.mp4"
                 autoPlay
                 loop
                 muted

@@ -591,8 +591,10 @@ img {
 }
 
 .sound-text {
-  font-size: 14px;
-  letter-spacing: 0.5px;
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  opacity: 0.8;
 }
 
 /* Estilo para o botão do OpenSea */

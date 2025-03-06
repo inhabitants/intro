@@ -145,7 +145,8 @@ function App() {
         <div className="container mx-auto px-4 mb-12">
           <h2 className="text-4xl font-bold text-center mb-4 magical-text">NFT Collection</h2>
           <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto">
-            Exclusive pinto-inspired digital collectibles, each with unique traits and rarities.
+            Exclusive Pinto-inspired digital collectibles, each with unique traits and rarities.
+            Join our vibrant community of experimenters and onchain enthusiasts.
           </p>
           <div className="mt-8 text-center">
             <a 
@@ -154,7 +155,7 @@ function App() {
               rel="noopener noreferrer" 
               className="opensea-button"
             >
-              Visitar Coleção no OpenSea
+              View Collection on OpenSea
             </a>
           </div>
         </div>
@@ -210,9 +211,9 @@ function App() {
       {/* HelenAI Section - Movida para antes da seção Lore */}
       <section className="py-20 helen-section">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4 magical-text">HelenAI</h2>
+          <h2 className="text-4xl font-bold text-center mb-4 magical-text">Meet Helen AI</h2>
           <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">
-            Meet Helen, your personal pinto companion powered by advanced AI.
+            Meet HelenAI our personal pinto companion powered by advanced AI.
           </p>
           
           <div className="helen-video-grid">
@@ -259,7 +260,7 @@ function App() {
               rel="noopener noreferrer" 
               className="helen-button"
             >
-              Visite Helen
+              Experience Helen AI
             </a>
           </div>
         </div>
@@ -268,9 +269,10 @@ function App() {
       {/* Lore Section with Videos - Movida para depois da seção Helen */}
       <section className="py-20 lore-section">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4 magical-text">Anime Lore</h2>
+          <h2 className="text-4xl font-bold text-center mb-4 magical-text">Helen's Universe</h2>
           <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">
-            Dive into the rich storytelling and vibrant worlds of our anime universe.
+            Explore the rich narrative and vibrant world of Helen's universe.
+            Immerse yourself in the story that connects our worlds
           </p>
           
           {/* Vídeo MP4 em loop */}
@@ -287,7 +289,7 @@ function App() {
             <div className="video-overlay">
               <button className="sound-toggle">
                 <span className="sound-icon">🔊</span>
-                <span className="sound-text">Clique para som</span>
+                <span className="sound-text">Sound</span>
               </button>
             </div>
           </div>
@@ -299,7 +301,7 @@ function App() {
               rel="noopener noreferrer" 
               className="lore-button"
             >
-              Explorar o Universo Inhabitants
+              Discover Helen's Story
             </a>
           </div>
         </div>
@@ -315,7 +317,7 @@ function App() {
                 alt="Pinto DAO Logo" 
                 className="h-36 mb-2"
               />
-              <p className="text-gray-400 mt-2">Decentralizing Pinto culture since 2025</p>
+              <p className="text-gray-400 mt-2">Decentralizing Pinto culture since 2024</p>
             </div>
             <div className="flex gap-6">
               <a href="https://x.pinto.wtf" target="_blank" rel="noopener noreferrer" aria-label="Twitter">

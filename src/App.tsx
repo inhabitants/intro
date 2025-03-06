@@ -65,7 +65,7 @@ function App() {
 
   // Short GIF URLs for Lore section
   const loreGifs = [
-    "/images/Banner1in.gif",
+    "/images/inhabgif1.mp4",
     "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzI0YzM0ZDM0YjA0YjMyZTA0ZDM0YjA0YjMyZTA0ZDM0YjA0YjMyZSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/3oKIPu8kvxfWqMjc1a/giphy.gif",
     "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzJlMDRkMzRiMDRiMzJlMDRkMzRiMDRiMzJlMDRkMzRiMDRiMzJlJmVwPXYxX2ludGVybmFsX2dpZnNfZ2lmSWQmY3Q9Zw/3o7TKoWXm3okO1kgHC/giphy.gif",
     "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjM5ZTJkZjc3NzM0NzFkMzIxYjE0ZjRlYzY0NGZmZGMxZGYxZGRjJmVwPXYxX2ludGVybmFsX2dpZnNfZ2lmSWQmY3Q9Zw/l0HlQXlQ3nHyLMvte/giphy.gif"

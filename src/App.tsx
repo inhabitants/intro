@@ -72,10 +72,13 @@ function App() {
 
   // Exemplo de vídeos MP4 para substituir GIFs
   const loreVideos = [
+    // Tentando diferentes formatos de caminho para o arquivo local
+    "./helenskate.mp4", // Arquivo na raiz da pasta public
+    "./videos/helenskate.mp4",
     "/videos/helenskate.mp4",
-    "/videos/helenskate.mp4",
-    "/videos/helenskate.mp4",
-    "/videos/helenskate.mp4",
+    "videos/helenskate.mp4",
+    // Fallback para URL online
+    "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzI0YzM0ZDM0YjA0YjMyZTA0ZDM0YjA0YjMyZTA0ZDM0YjA0YjMyZSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/3oKIPu8kvxfWqMjc1a/giphy.mp4",
   ];
 
   // HelenAI images
@@ -175,11 +178,11 @@ function App() {
           {/* Vídeos MP4 em loop */}
           <div className="video-grid">
             {loreVideos.map((video, index) => (
-              <div key={`video-${index}`} className="video-container video-vertical video-pingpong">
+              <div key={`video-${index}`} className="video-container video-vertical">
                 <video
                   src={video}
                   autoPlay
-                  loop={false}
+                  loop
                   muted
                   playsInline
                   className="w-full h-full object-cover"
@@ -201,11 +204,11 @@ function App() {
           <div className="video-grid">
             {/* Três vídeos horizontais */}
             {[1, 2, 3].map((num, index) => (
-              <div key={`helen-video-${index}`} className="video-container video-vertical video-pingpong">
+              <div key={`helen-video-${index}`} className="video-container video-vertical">
                 <video
-                  src="/videos/helenskate.mp4"
+                  src={loreVideos[index % loreVideos.length]}
                   autoPlay
-                  loop={false}
+                  loop
                   muted
                   playsInline
                   className="w-full h-full object-cover"

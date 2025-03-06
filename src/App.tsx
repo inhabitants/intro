@@ -171,7 +171,7 @@ function App() {
           <div className="single-video-container" onClick={toggleSound}>
             <video
               ref={loreVideoRef}
-              src="/videos/helenskate.mp4"
+              src="/videos/Helensong.mp4"
               autoPlay
               loop
               muted
@@ -193,7 +193,7 @@ function App() {
               rel="noopener noreferrer" 
               className="lore-button"
             >
-              Conhecer Inhabitants
+              Explorar o Universo Inhabitants
             </a>
           </div>
         </div>

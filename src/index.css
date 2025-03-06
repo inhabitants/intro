@@ -144,6 +144,36 @@
   object-fit: cover;
 }
 
+/* Estilo para vídeos em formato vertical (celular) */
+.video-vertical {
+  aspect-ratio: 9/16 !important;
+  max-width: 350px;
+  margin: 0 auto;
+  border: 10px solid #222;
+  border-radius: 30px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.video-vertical::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 20px;
+  background-color: #222;
+  border-radius: 0 0 15px 15px;
+  z-index: 10;
+}
+
+.video-vertical video {
+  object-fit: cover;
+  background-color: #000;
+  border-radius: 20px;
+}
+
 .lore-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

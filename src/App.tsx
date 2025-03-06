@@ -213,7 +213,7 @@ function App() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {/* Primeiro quadrante com vídeo */}
-            <div className="video-container video-vertical">
+            <div className="video-container video-vertical md:col-span-1">
               <video
                 src="/videos/helenskate.mp4"
                 autoPlay
@@ -225,15 +225,17 @@ function App() {
             </div>
             
             {/* Demais quadrantes com imagens */}
-            {helenAIImages.slice(0, 2).map((image, index) => (
-              <div key={`helen-${index}`} className="video-container">
-                <img 
-                  src={image} 
-                  alt={`HelenAI ${index + 1}`} 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
+            <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+              {helenAIImages.slice(0, 2).map((image, index) => (
+                <div key={`helen-${index}`} className="video-container">
+                  <img 
+                    src={image} 
+                    alt={`HelenAI ${index + 1}`} 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

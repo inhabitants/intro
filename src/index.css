@@ -135,12 +135,12 @@
 .nft-track {
   display: flex;
   width: fit-content;
-  animation: scroll 60s linear infinite;
+  animation: scroll 120s linear infinite;
   will-change: transform;
 }
 
 .nft-track-reverse {
-  animation: scroll-reverse 50s linear infinite;
+  animation: scroll-reverse 100s linear infinite;
   will-change: transform;
 }
 

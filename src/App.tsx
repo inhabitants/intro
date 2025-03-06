@@ -63,9 +63,6 @@ function App() {
     "/images/pinto51.jpg"
   ];
 
-  // Vídeos locais para as seções Lore e HelenAI
-  const videoSrc = "/videos/helenskate.mp4";
-
   // HelenAI images
   const helenAIImages = [
     "/images/helen1.jpg",
@@ -163,15 +160,14 @@ function App() {
           {/* Vídeos MP4 em loop */}
           <div className="video-grid">
             {[1, 2, 3, 4].map((_, index) => (
-              <div key={`video-${index}`} className="video-container video-vertical">
+              <div key={`video-${index}`} className="video-container">
                 <video
-                  src={videoSrc}
+                  src="/videos/helenskate.mp4"
                   autoPlay
                   loop
                   muted
                   playsInline
                   className="w-full h-full object-cover"
-                  poster="/images/pinto1.jpg"
                 />
               </div>
             ))}
@@ -190,15 +186,14 @@ function App() {
           <div className="video-grid">
             {/* Três vídeos em loop */}
             {[1, 2, 3].map((_, index) => (
-              <div key={`helen-video-${index}`} className="video-container video-vertical">
+              <div key={`helen-video-${index}`} className="video-container">
                 <video
-                  src={videoSrc}
+                  src="/videos/helenskate.mp4"
                   autoPlay
                   loop
                   muted
                   playsInline
                   className="w-full h-full object-cover"
-                  poster="/images/helen1.jpg"
                 />
               </div>
             ))}

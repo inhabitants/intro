@@ -150,7 +150,7 @@ function App() {
       </section>
 
       {/* Lore Section with Videos */}
-      <section className="py-20 section-alt">
+      <section className="py-20 lore-section">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4 magical-text">Anime Lore</h2>
           <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">
@@ -158,19 +158,58 @@ function App() {
           </p>
           
           {/* Vídeos MP4 em loop */}
-          <div className="video-grid">
-            {[1, 2, 3, 4].map((_, index) => (
-              <div key={`video-${index}`} className="video-container">
-                <video
-                  src="/videos/helenskate.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
+          <div className="lore-video-grid">
+            <div className="video-container lore-video">
+              <video
+                src="/videos/helenskate.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="video-container lore-video">
+              <video
+                src="/videos/helenskate.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="video-container lore-video">
+              <video
+                src="/videos/helenskate.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="video-container lore-video">
+              <video
+                src="/videos/helenskate.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <a 
+              href="#" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="lore-button"
+            >
+              Conhecer Comic
+            </a>
           </div>
         </div>
       </section>

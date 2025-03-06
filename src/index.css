@@ -351,10 +351,21 @@
   }
 }
 
+.helen-video-grid .video-container {
+  aspect-ratio: 9/16 !important;
+}
+
+.helen-video-grid video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .helen-video {
   transform: rotate(-2deg);
   transition: all 0.4s ease;
   border: 3px solid rgba(255, 255, 255, 0.1);
+  aspect-ratio: 9/16 !important;
 }
 
 .helen-video:nth-child(2) {
@@ -372,6 +383,10 @@
   z-index: 2;
   border-color: rgba(255, 61, 0, 0.5);
   transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.video-container.helen-video {
+  aspect-ratio: 9/16 !important;
 }
 
 /* Estilos para a seção Lore */

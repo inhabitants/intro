@@ -68,7 +68,13 @@ function App() {
     "/images/Inhabgif1.gif",
     "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzI0YzM0ZDM0YjA0YjMyZTA0ZDM0YjA0YjMyZTA0ZDM0YjA0YjMyZSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/3oKIPu8kvxfWqMjc1a/giphy.gif",
     "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzJlMDRkMzRiMDRiMzJlMDRkMzRiMDRiMzJlMDRkMzRiMDRiMzJlJmVwPXYxX2ludGVybmFsX2dpZnNfZ2lmSWQmY3Q9Zw/3o7TKoWXm3okO1kgHC/giphy.gif",
-    "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjM5ZTJkZjc3NzM0NzFkMzIxYjE0ZjRlYzY0NGZmZGMxZGYxZGRjJmVwPXYxX2ludGVybmFsX2dpZnNfZ2lmSWQmY3Q9Zw/l0HlQXlQ3nHyLMvte/giphy.gif"
+  ];
+
+  // Exemplo de vídeos MP4 para substituir GIFs
+  const loreVideos = [
+    "/videos/helenskate.mp4",
+    "/videos/video2.mp4",
+    "/videos/video3.mp4",
   ];
 
   // HelenAI images
@@ -165,12 +171,30 @@ function App() {
             Dive into the rich storytelling and vibrant worlds of our anime universe.
           </p>
           
-          <div className="lore-grid">
+          {/* Versão com GIFs */}
+          <div className="lore-grid mb-20">
             {loreGifs.map((gif, index) => (
               <div key={`lore-${index}`} className="video-container">
                 <img 
                   src={gif} 
                   alt={`Anime Lore ${index + 1}`} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+          
+          {/* Versão alternativa com vídeos MP4 em loop */}
+          <h3 className="text-2xl font-bold text-center mb-4 magical-text">Versão com Vídeos MP4</h3>
+          <div className="lore-grid">
+            {loreVideos.map((video, index) => (
+              <div key={`video-${index}`} className="video-container">
+                <video
+                  src={video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -188,7 +212,20 @@ function App() {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {helenAIImages.map((image, index) => (
+            {/* Primeiro quadrante com vídeo */}
+            <div className="video-container">
+              <video
+                src="/videos/helenskate.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            {/* Demais quadrantes com imagens */}
+            {helenAIImages.slice(0, 2).map((image, index) => (
               <div key={`helen-${index}`} className="video-container">
                 <img 
                   src={image} 

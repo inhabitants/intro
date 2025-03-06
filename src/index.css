@@ -15,7 +15,12 @@
   background-clip: text;
   color: transparent;
   animation: gradient 8s ease infinite;
-  background-size: 300% 300%;
+  background-size: 200% 200%;
+  animation-play-state: paused;
+}
+
+.magical-text:hover {
+  animation-play-state: running;
 }
 
 .dao-bg {
@@ -80,18 +85,17 @@
 }
 
 .nft-track {
-  display: flex;
-  width: fit-content;
-  animation: scroll 60s linear infinite;
+  animation: scroll 30s linear infinite;
+  width: calc(250px * 10);
 }
 
 .nft-track-reverse {
-  animation: scroll-reverse 50s linear infinite;
+  animation: scroll-reverse 30s linear infinite;
 }
 
 .nft-item {
-  width: 160px;
-  height: 160px;
+  width: 250px;
+  height: 250px;
   flex-shrink: 0;
   margin: 0 1rem;
   border-radius: 12px;
@@ -105,21 +109,13 @@
 }
 
 @keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-160px * 17 - 2rem * 17));
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-250px * 5)); }
 }
 
 @keyframes scroll-reverse {
-  0% {
-    transform: translateX(calc(-160px * 17 - 2rem * 17));
-  }
-  100% {
-    transform: translateX(0);
-  }
+  0% { transform: translateX(calc(-250px * 5)); }
+  100% { transform: translateX(0); }
 }
 
 .video-container {
@@ -141,6 +137,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  will-change: transform;
+  contain: content;
 }
 
 /* Estilo para vídeos em formato vertical (celular) */
@@ -325,10 +323,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
-    radial-gradient(circle at 20% 30%, rgba(255, 61, 0, 0.1) 0%, transparent 20%),
-    radial-gradient(circle at 80% 70%, rgba(255, 158, 128, 0.1) 0%, transparent 20%);
   z-index: 0;
+  pointer-events: none;
 }
 
 .helen-video-grid {
@@ -365,9 +361,10 @@
 }
 
 .helen-video:hover {
-  transform: rotate(0) scale(1.05);
+  transform: scale(1.03);
   z-index: 2;
   border-color: rgba(255, 61, 0, 0.5);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 /* Estilos para a seção Lore */
@@ -384,10 +381,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
-    radial-gradient(circle at 70% 20%, rgba(111, 66, 193, 0.15) 0%, transparent 25%),
-    radial-gradient(circle at 30% 80%, rgba(66, 99, 193, 0.15) 0%, transparent 25%);
   z-index: 0;
+  pointer-events: none;
 }
 
 .lore-video-grid {
@@ -420,10 +415,10 @@
 }
 
 .lore-video:hover {
-  transform: perspective(1000px) rotateY(0) scale(1.03);
+  transform: scale(1.03);
   z-index: 2;
-  border-color: rgba(111, 66, 193, 0.6);
-  box-shadow: 0 15px 40px rgba(111, 66, 193, 0.3);
+  border-color: rgba(255, 61, 0, 0.5);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .lore-button {
@@ -456,9 +451,14 @@
 
 .lore-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(111, 66, 193, 0.5);
+  box-shadow: 0 8px 25px rgba(255, 61, 0, 0.5);
 }
 
 .lore-button:hover::before {
   left: 100%;
+}
+
+/* Otimizar o carregamento de imagens */
+img {
+  content-visibility: auto; /* Melhora o desempenho de renderização */
 }

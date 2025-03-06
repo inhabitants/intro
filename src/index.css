@@ -37,6 +37,7 @@
 .dao-bg {
   position: relative;
   overflow: hidden;
+  padding-top: 70px; /* Espaço para a barra de navegação fixa */
 }
 
 .dao-bg::before {
@@ -732,4 +733,19 @@ img {
 .dao-bg .container {
   position: relative;
   z-index: 10;
+}
+
+/* Logo container na seção hero */
+.logo-container {
+  margin-bottom: 1.5rem;
+}
+
+.logo-container img {
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+  transition: all 0.3s ease;
+}
+
+.logo-container img:hover {
+  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.4));
+  transform: scale(1.05);
 }

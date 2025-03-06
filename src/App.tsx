@@ -83,6 +83,17 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0b] text-white">
+      {/* Navbar com logo */}
+      <header className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-sm">
+        <div className="container mx-auto px-4 py-3 flex justify-center">
+          <img 
+            src="/images/logo-pinto dao.png" 
+            alt="Pinto DAO Logo" 
+            className="h-14 object-contain"
+          />
+        </div>
+      </header>
+      
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden dao-bg">
         <div className="video-background">
@@ -98,14 +109,18 @@ function App() {
         </div>
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.h1 
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="hero-title magical-text"
+              className="logo-container"
             >
-              Pinto DAO
-            </motion.h1>
+              <img 
+                src="/images/logo-pinto dao.png" 
+                alt="Pinto DAO Logo" 
+                className="mx-auto h-32 md:h-40 mb-6"
+              />
+            </motion.div>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -304,7 +319,11 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
-              <h2 className="text-2xl font-bold magical-text">Pinto DAO</h2>
+              <img 
+                src="/images/logo-pinto dao.png" 
+                alt="Pinto DAO Logo" 
+                className="h-12 mb-2"
+              />
               <p className="text-gray-400 mt-2">Decentralizing Pinto culture since 2025</p>
             </div>
             <div className="flex gap-6">

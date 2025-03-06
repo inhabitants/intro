@@ -63,17 +63,29 @@ function App() {
     "/images/pinto51.jpg"
   ];
 
-  // Exemplo de vídeos MP4 para substituir GIFs
-  const loreVideos = [
-    "https://www.youtube.com/embed/TcMBFSGVi1c?autoplay=0&mute=1&controls=1&rel=0",
-    "https://www.youtube.com/embed/6ZfuNTqbHE8?autoplay=0&mute=1&controls=1&rel=0",
-    "https://www.youtube.com/embed/8YjFbMbfXaQ?autoplay=0&mute=1&controls=1&rel=0",
-    "https://www.youtube.com/embed/d9MyW72ELq0?autoplay=0&mute=1&controls=1&rel=0",
+  // Vídeos para as seções Lore e HelenAI
+  const videoData = [
+    {
+      id: "TcMBFSGVi1c",
+      title: "Avengers: Endgame"
+    },
+    {
+      id: "6ZfuNTqbHE8",
+      title: "Avatar 2"
+    },
+    {
+      id: "8YjFbMbfXaQ",
+      title: "Dune"
+    },
+    {
+      id: "d9MyW72ELq0",
+      title: "Star Wars"
+    }
   ];
 
   // HelenAI images
   const helenAIImages = [
-    "/images/hellen1.jpg",
+    "/images/helen1.jpg",
     "https://images.unsplash.com/photo-1639628735042-31baaf048d15?q=80&w=1000&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=1000&auto=format&fit=crop"
   ];
@@ -157,7 +169,7 @@ function App() {
         </div>
       </section>
 
-      {/* Lore Section with GIFs */}
+      {/* Lore Section with Videos */}
       <section className="py-20 section-alt">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4 magical-text">Anime Lore</h2>
@@ -165,23 +177,96 @@ function App() {
             Dive into the rich storytelling and vibrant worlds of our anime universe.
           </p>
           
-          {/* Vídeos MP4 em loop */}
+          {/* Vídeos como imagens com links */}
           <div className="video-grid">
-            {loreVideos.map((video, index) => (
+            {videoData.map((video, index) => (
               <div key={`video-${index}`} className="video-container video-vertical">
-                <iframe
-                  src={video}
-                  title={`Anime Lore ${index + 1}`}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                ></iframe>
+                <a 
+                  href={`https://www.youtube.com/watch?v=${video.id}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="video-link"
+                >
+                  <img 
+                    src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`} 
+                    alt={video.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="play-button">
+                    <svg viewBox="0 0 24 24" width="64" height="64" fill="white">
+                      <path d="M8 5v14l11-7z"></path>
+                    </svg>
+                  </div>
+                </a>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* HelenAI Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-4 magical-text">HelenAI</h2>
+          <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">
+            Meet Helen, your personal pinto companion powered by advanced AI.
+          </p>
+          
+          <div className="video-grid">
+            {/* Três vídeos como imagens com links */}
+            {videoData.slice(0, 3).map((video, index) => (
+              <div key={`helen-video-${index}`} className="video-container video-vertical">
+                <a 
+                  href={`https://www.youtube.com/watch?v=${video.id}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="video-link"
+                >
+                  <img 
+                    src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`} 
+                    alt={video.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="play-button">
+                    <svg viewBox="0 0 24 24" width="64" height="64" fill="white">
+                      <path d="M8 5v14l11-7z"></path>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 border-t border-white/10">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="mb-6 md:mb-0">
+              <h2 className="text-2xl font-bold magical-text">Pinto DAO</h2>
+              <p className="text-gray-400 mt-2">Decentralizing Pinto culture since 2025</p>
+            </div>
+            <div className="flex gap-6">
+              <a href="#" aria-label="Twitter">
+                <Twitter className="social-icon" />
+              </a>
+              <a href="#" aria-label="Instagram">
+                <Instagram className="social-icon" />
+              </a>
+              <a href="#" aria-label="YouTube">
+                <Youtube className="social-icon" />
+              </a>
+              <a href="#" aria-label="Discord">
+                <MessageCircle className="social-icon" />
+              </a>
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-white/10 text-center text-gray-500">
+            <p>© 2025 Pinto DAO. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

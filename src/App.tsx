@@ -103,7 +103,7 @@ function App() {
           <img 
             src="/images/logo-pinto dao.png" 
             alt="Pinto DAO Logo" 
-            className="h-20 object-contain"
+            className="h-28 object-contain"
           />
         </div>
       </header>
@@ -207,47 +207,7 @@ function App() {
         </div>
       </section>
 
-      {/* Lore Section with Videos */}
-      <section className="py-20 lore-section">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4 magical-text">Anime Lore</h2>
-          <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">
-            Dive into the rich storytelling and vibrant worlds of our anime universe.
-          </p>
-          
-          {/* Vídeo MP4 em loop */}
-          <div className="single-video-container" onClick={toggleSound}>
-            <video
-              ref={loreVideoRef}
-              src="/videos/Helensong.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-            />
-            <div className="video-overlay">
-              <button className="sound-toggle">
-                <span className="sound-icon">🔊</span>
-                <span className="sound-text">Clique para som</span>
-              </button>
-            </div>
-          </div>
-          
-          <div className="mt-12 text-center">
-            <a 
-              href="https://inhabitants.zone" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="lore-button"
-            >
-              Explorar o Universo Inhabitants
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* HelenAI Section */}
+      {/* HelenAI Section - Movida para antes da seção Lore */}
       <section className="py-20 helen-section">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4 magical-text">HelenAI</h2>
@@ -305,6 +265,46 @@ function App() {
         </div>
       </section>
 
+      {/* Lore Section with Videos - Movida para depois da seção Helen */}
+      <section className="py-20 lore-section">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-4 magical-text">Anime Lore</h2>
+          <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">
+            Dive into the rich storytelling and vibrant worlds of our anime universe.
+          </p>
+          
+          {/* Vídeo MP4 em loop */}
+          <div className="single-video-container" onClick={toggleSound}>
+            <video
+              ref={loreVideoRef}
+              src="/videos/Helensong.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            />
+            <div className="video-overlay">
+              <button className="sound-toggle">
+                <span className="sound-icon">🔊</span>
+                <span className="sound-text">Clique para som</span>
+              </button>
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <a 
+              href="https://inhabitants.zone" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="lore-button"
+            >
+              Explorar o Universo Inhabitants
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-12 border-t border-white/10">
         <div className="container mx-auto px-4">
@@ -313,7 +313,7 @@ function App() {
               <img 
                 src="/images/logo-pinto dao.png" 
                 alt="Pinto DAO Logo" 
-                className="h-20 mb-2"
+                className="h-36 mb-2"
               />
               <p className="text-gray-400 mt-2">Decentralizing Pinto culture since 2025</p>
             </div>

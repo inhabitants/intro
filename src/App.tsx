@@ -70,20 +70,18 @@ function App() {
     "https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=1000&auto=format&fit=crop"
   ];
 
-  // Referência para o vídeo de lore
+  // Refs para os vídeos
   const loreVideoRef = useRef<HTMLVideoElement>(null);
-  
-  // Referência para o canvas da malha interativa
   const canvasRef = useRef<HTMLCanvasElement>(null);
   
-  // Função para alternar o som do vídeo
+  // Toggle sound function
   const toggleSound = () => {
     if (loreVideoRef.current) {
       loreVideoRef.current.muted = !loreVideoRef.current.muted;
     }
   };
 
-  // Efeito para inicializar a malha interativa
+  // Efeito Canvas avançado
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -98,13 +96,23 @@ function App() {
     canvas.width = width;
     canvas.height = height;
     
-    // Partículas para a malha
+    // Partículas para o efeito
     const particlesArray: Particle[] = [];
-    const numberOfParticles = 100;
+    const numberOfParticles = 150;
     
     // Posição do mouse
-    let mouseX = 0;
-    let mouseY = 0;
+    let mouseX = width / 2;
+    let mouseY = height / 2;
+    
+    // Cores vibrantes para as partículas
+    const colors = [
+      '#FF00FF', // Magenta
+      '#00FFFF', // Ciano
+      '#FFFF00', // Amarelo
+      '#FF0099', // Rosa
+      '#00FF99', // Verde-água
+      '#9900FF'  // Roxo
+    ];
     
     // Classe para as partículas
     class Particle {
@@ -115,6 +123,8 @@ function App() {
       baseY: number;
       density: number;
       color: string;
+      angle: number;
+      speed: number;
       
       constructor(x: number, y: number) {
         this.x = x;
@@ -123,19 +133,35 @@ function App() {
         this.baseX = x;
         this.baseY = y;
         this.density = (Math.random() * 30) + 1;
-        
-        // Cores aleatórias em tons de laranja e roxo
-        const colors = ['rgba(255, 61, 0, 0.8)', 'rgba(111, 66, 193, 0.8)', 'rgba(255, 158, 128, 0.8)'];
         this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.angle = Math.random() * Math.PI * 2;
+        this.speed = 0.05 + Math.random() * 0.2;
       }
       
       draw() {
         if (!ctx) return;
-        ctx.fillStyle = this.color;
+        
+        // Efeito de brilho
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = this.color;
+        
+        // Desenhar partícula com gradiente
+        const gradient = ctx.createRadialGradient(
+          this.x, this.y, 0,
+          this.x, this.y, this.size
+        );
+        
+        gradient.addColorStop(0, this.color);
+        gradient.addColorStop(1, 'rgba(0,0,0,0)');
+        
+        ctx.fillStyle = gradient;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.closePath();
         ctx.fill();
+        
+        // Resetar sombra
+        ctx.shadowBlur = 0;
       }
       
       update() {
@@ -147,23 +173,30 @@ function App() {
         const forceDirectionY = dy / distance;
         
         // Distância máxima para interação
-        const maxDistance = 100;
+        const maxDistance = 150;
         const force = (maxDistance - distance) / maxDistance;
+        
+        // Movimento orbital suave
+        this.angle += this.speed;
         
         // Se a distância for menor que maxDistance, mover a partícula em direção ao mouse
         if (distance < maxDistance) {
           this.x += forceDirectionX * force * this.density;
           this.y += forceDirectionY * force * this.density;
         } else {
-          // Retornar lentamente à posição original
+          // Movimento orbital quando não está próximo ao mouse
           if (this.x !== this.baseX) {
             const dx = this.x - this.baseX;
-            this.x -= dx / 10;
+            this.x -= dx / 20;
           }
           if (this.y !== this.baseY) {
             const dy = this.y - this.baseY;
-            this.y -= dy / 10;
+            this.y -= dy / 20;
           }
+          
+          // Adicionar movimento orbital suave
+          this.x += Math.sin(this.angle) * 0.3;
+          this.y += Math.cos(this.angle) * 0.3;
         }
         
         this.draw();
@@ -182,7 +215,6 @@ function App() {
     
     // Conectar partículas próximas com linhas
     function connect() {
-      let opacityValue = 1;
       for (let a = 0; a < particlesArray.length; a++) {
         for (let b = a; b < particlesArray.length; b++) {
           const dx = particlesArray[a].x - particlesArray[b].x;
@@ -190,15 +222,24 @@ function App() {
           const distance = Math.sqrt(dx * dx + dy * dy);
           
           if (distance < 120) {
-            opacityValue = 1 - (distance / 120);
-            if (ctx) {
-              ctx.strokeStyle = `rgba(255, 255, 255, ${opacityValue * 0.4})`;
-              ctx.lineWidth = 1;
-              ctx.beginPath();
-              ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-              ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-              ctx.stroke();
-            }
+            const opacity = 1 - (distance / 120);
+            const gradient = ctx!.createLinearGradient(
+              particlesArray[a].x, 
+              particlesArray[a].y, 
+              particlesArray[b].x, 
+              particlesArray[b].y
+            );
+            
+            // Criar gradiente entre as cores das duas partículas
+            gradient.addColorStop(0, particlesArray[a].color.replace(')', `, ${opacity})`).replace('rgb', 'rgba'));
+            gradient.addColorStop(1, particlesArray[b].color.replace(')', `, ${opacity})`).replace('rgb', 'rgba'));
+            
+            ctx!.strokeStyle = gradient;
+            ctx!.lineWidth = 1;
+            ctx!.beginPath();
+            ctx!.moveTo(particlesArray[a].x, particlesArray[a].y);
+            ctx!.lineTo(particlesArray[b].x, particlesArray[b].y);
+            ctx!.stroke();
           }
         }
       }
@@ -209,7 +250,9 @@ function App() {
       requestAnimationFrame(animate);
       if (!ctx) return;
       
-      ctx.clearRect(0, 0, width, height);
+      // Limpar canvas com efeito de rastro
+      ctx.fillStyle = 'rgba(10, 10, 27, 0.1)';
+      ctx.fillRect(0, 0, width, height);
       
       for (let i = 0; i < particlesArray.length; i++) {
         particlesArray[i].update();

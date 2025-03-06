@@ -109,12 +109,14 @@ function App() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <button className="px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity">
-                Join the DAO
-              </button>
-              <button className="px-8 py-3 bg-white/10 border border-white/20 rounded-lg font-bold text-white hover:bg-white/20 transition-all">
-                Explore Collection
-              </button>
+              <a 
+                href="https://pinto.wtf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
+              >
+                Join DAO
+              </a>
             </motion.div>
           </div>
         </div>

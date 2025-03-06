@@ -146,32 +146,55 @@
 
 /* Estilo para vídeos em formato vertical (celular) */
 .video-vertical {
-  aspect-ratio: 9/16 !important;
-  max-width: 350px;
+  aspect-ratio: 16/9 !important;
+  max-width: 100%;
   margin: 0 auto;
-  border: 10px solid #222;
-  border-radius: 30px !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  position: relative;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 }
 
 .video-vertical::before {
-  content: "";
-  position: absolute;
-  top: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 20px;
-  background-color: #222;
-  border-radius: 0 0 15px 15px;
-  z-index: 10;
+  display: none; /* Removendo o notch do celular */
 }
 
 .video-vertical video {
   object-fit: cover;
   background-color: #000;
-  border-radius: 20px;
+  border-radius: 12px;
+}
+
+/* Efeito ping-pong para vídeos */
+.video-pingpong {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-pingpong video {
+  transition: all 0.1s ease;
+}
+
+/* Classe aplicada via JavaScript quando o vídeo estiver tocando ao contrário */
+.video-reverse {
+  transform: scaleX(-1); /* Espelha horizontalmente para disfarçar a reversão */
+}
+
+/* Estilo para a grade de vídeos */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-grid .video-container {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-grid .video-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 .lore-grid {

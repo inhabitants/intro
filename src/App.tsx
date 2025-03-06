@@ -73,8 +73,9 @@ function App() {
   // Exemplo de vídeos MP4 para substituir GIFs
   const loreVideos = [
     "/videos/helenskate.mp4",
-    "/videos/video2.mp4",
-    "/videos/video3.mp4",
+    "/videos/helenskate.mp4",
+    "/videos/helenskate.mp4",
+    "/videos/helenskate.mp4",
   ];
 
   // HelenAI images
@@ -186,9 +187,9 @@ function App() {
           
           {/* Versão alternativa com vídeos MP4 em loop */}
           <h3 className="text-2xl font-bold text-center mb-4 magical-text">Versão com Vídeos MP4</h3>
-          <div className="lore-grid">
+          <div className="video-grid">
             {loreVideos.map((video, index) => (
-              <div key={`video-${index}`} className={`video-container ${video.includes('helenskate') ? 'video-vertical' : ''}`}>
+              <div key={`video-${index}`} className="video-container video-vertical">
                 <video
                   src={video}
                   autoPlay
@@ -211,31 +212,20 @@ function App() {
             Meet Helen, your personal pinto companion powered by advanced AI.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {/* Primeiro quadrante com vídeo */}
-            <div className="video-container video-vertical md:col-span-1">
-              <video
-                src="/videos/helenskate.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            {/* Demais quadrantes com imagens */}
-            <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
-              {helenAIImages.slice(0, 2).map((image, index) => (
-                <div key={`helen-${index}`} className="video-container">
-                  <img 
-                    src={image} 
-                    alt={`HelenAI ${index + 1}`} 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+          <div className="video-grid">
+            {/* Três vídeos horizontais */}
+            {[1, 2, 3].map((num, index) => (
+              <div key={`helen-video-${index}`} className="video-container video-vertical">
+                <video
+                  src="/videos/helenskate.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

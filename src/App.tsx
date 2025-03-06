@@ -445,7 +445,7 @@ function App() {
                       alt="Pinto DAO Logo" 
                       className="h-36 mb-2"
                     />
-                    <p className="text-gray-400 mt-2">Pioneering decentralized communities since 2023</p>
+                    <p className="text-gray-400 mt-2">Irreverence, Experimentation and Cooperation Beyond the Alpha</p>
                   </div>
                   <div className="flex gap-6">
                     <a href="https://x.pinto.wtf" target="_blank" rel="noopener noreferrer" aria-label="Twitter">

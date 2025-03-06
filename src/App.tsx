@@ -84,13 +84,22 @@ function App() {
     <div className="min-h-screen bg-[#0a0a0b] text-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden dao-bg">
+        <div className="dao-particles">
+          <div className="particle" style={{ width: '80px', height: '80px', left: '10%', top: '20%', animationDelay: '0s' }}></div>
+          <div className="particle" style={{ width: '50px', height: '50px', left: '20%', top: '80%', animationDelay: '2s' }}></div>
+          <div className="particle" style={{ width: '70px', height: '70px', left: '50%', top: '50%', animationDelay: '4s' }}></div>
+          <div className="particle" style={{ width: '40px', height: '40px', left: '80%', top: '30%', animationDelay: '6s' }}></div>
+          <div className="particle" style={{ width: '60px', height: '60px', left: '70%', top: '70%', animationDelay: '8s' }}></div>
+          <div className="particle" style={{ width: '30px', height: '30px', left: '30%', top: '40%', animationDelay: '10s' }}></div>
+          <div className="particle" style={{ width: '90px', height: '90px', left: '90%', top: '10%', animationDelay: '12s' }}></div>
+        </div>
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-5xl md:text-7xl font-bold mb-6 magical-text"
+              className="hero-title magical-text"
             >
               Pinto DAO
             </motion.h1>
@@ -98,7 +107,7 @@ function App() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl md:text-2xl mb-10 text-gray-300"
+              className="hero-description mt-6 mb-10"
             >
               The first decentralized autonomous organization dedicated to Pinto fans worldwide. 
               Collect, trade, and govern the future of Pinto culture.

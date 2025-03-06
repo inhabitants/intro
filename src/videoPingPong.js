@@ -6,8 +6,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Seleciona todos os vídeos que devem ter o efeito ping-pong
   const pingPongVideos = document.querySelectorAll('.video-pingpong video');
+  console.log(`Encontrados ${pingPongVideos.length} vídeos para efeito ping-pong`);
   
-  pingPongVideos.forEach(video => {
+  // Função para garantir que o vídeo seja exibido, mesmo sem o efeito ping-pong
+  function ensureVideoPlayback(video) {
+    if (!video.playing) {
+      video.play().catch(err => {
+        console.warn('Erro ao iniciar vídeo, usando fallback de loop nativo:', err);
+        video.loop = true; // Fallback para loop nativo
+        video.play().catch(e => console.error('Falha no fallback:', e));
+      });
+    }
+  }
+  
+  pingPongVideos.forEach((video, index) => {
     // Armazena a duração original do vídeo
     let originalDuration = 0;
     let isReversed = false;
@@ -15,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Quando o vídeo estiver carregado, configura o efeito ping-pong
     video.addEventListener('loadedmetadata', () => {
       originalDuration = video.duration;
-      console.log(`Vídeo carregado, duração: ${originalDuration}s`);
+      console.log(`Vídeo ${index} carregado, duração: ${originalDuration}s`);
+      ensureVideoPlayback(video);
     });
     
     // Monitora o progresso do vídeo para implementar o efeito ping-pong
@@ -45,13 +58,26 @@ document.addEventListener('DOMContentLoaded', () => {
             // Marca como modo normal
             isReversed = false;
             // Inicia o vídeo novamente
-            video.play();
+            ensureVideoPlayback(video);
           }
         }, 30); // Ajuste este valor para controlar a velocidade da reversão
       }
     });
     
+    // Tratamento de erro para garantir que o vídeo seja exibido
+    video.addEventListener('error', (e) => {
+      console.error(`Erro ao carregar vídeo ${index}:`, e);
+      // Tenta recarregar o vídeo
+      const src = video.src;
+      video.src = '';
+      setTimeout(() => {
+        video.src = src;
+        video.loop = true; // Fallback para loop nativo
+        video.play().catch(err => console.warn('Não foi possível reproduzir após erro:', err));
+      }, 1000);
+    });
+    
     // Inicia o vídeo
-    video.play();
+    ensureVideoPlayback(video);
   });
 }); 

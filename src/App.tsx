@@ -172,21 +172,7 @@ function App() {
             Dive into the rich storytelling and vibrant worlds of our anime universe.
           </p>
           
-          {/* Versão com GIFs */}
-          <div className="lore-grid mb-20">
-            {loreGifs.map((gif, index) => (
-              <div key={`lore-${index}`} className="video-container">
-                <img 
-                  src={gif} 
-                  alt={`Anime Lore ${index + 1}`} 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
-          
-          {/* Versão alternativa com vídeos MP4 em loop */}
-          <h3 className="text-2xl font-bold text-center mb-4 magical-text">Versão com Vídeos MP4</h3>
+          {/* Vídeos MP4 em loop */}
           <div className="video-grid">
             {loreVideos.map((video, index) => (
               <div key={`video-${index}`} className="video-container video-vertical video-pingpong">

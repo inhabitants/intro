@@ -290,10 +290,19 @@
   100% { transform: translateY(0px); }
 }
 
+/* Aumentando o tamanho e efeito de hover dos ícones sociais */
 .social-icon {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
   color: white;
+}
+
+.social-icon:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
 }
 
 .helen-button {
@@ -678,23 +687,17 @@ img {
   z-index: 10;
 }
 
-/* Remover os estilos do botão "Join DAO" que adicionamos */
+/* Estilo para o botão Join DAO na seção hero */
 .dao-bg a {
-  /* Sem estilos específicos aqui, usando os estilos padrão definidos no HTML */
-}
-
-.dao-bg a::before {
-  /* Remover o pseudo-elemento */
-  content: none;
+  font-size: 1.2rem;
+  padding: 12px 36px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
 .dao-bg a:hover {
-  /* Usar apenas os estilos padrão de hover */
-}
-
-.dao-bg a:hover::before {
-  /* Remover o pseudo-elemento no hover */
-  content: none;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* Video Background para a seção de introdução */

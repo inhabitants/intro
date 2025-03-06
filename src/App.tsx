@@ -1,6 +1,20 @@
 import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Twitter, Youtube, Instagram, MessageCircle } from 'lucide-react';
+import { Twitter, Youtube, Instagram } from 'lucide-react';
+
+// Componente para o ícone do Discord
+const DiscordIcon = () => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="24" 
+    height="24" 
+    viewBox="0 0 127.14 96.36"
+    fill="currentColor"
+    className="social-icon"
+  >
+    <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z" />
+  </svg>
+);
 
 function App() {
   // Array of unique anime character image URLs from Unsplash
@@ -85,11 +99,11 @@ function App() {
     <div className="min-h-screen bg-[#0a0a0b] text-white">
       {/* Navbar com logo */}
       <header className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-3 flex justify-center">
+        <div className="container mx-auto px-4 py-3 flex justify-start">
           <img 
             src="/images/logo-pinto dao.png" 
             alt="Pinto DAO Logo" 
-            className="h-14 object-contain"
+            className="h-20 object-contain"
           />
         </div>
       </header>
@@ -107,45 +121,22 @@ function App() {
           />
           <div className="video-overlay-bg"></div>
         </div>
-        <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="logo-container"
+        <div className="container mx-auto px-4 py-20 relative z-10 flex flex-col items-center justify-end min-h-screen pb-32">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <a 
+              href="https://pinto.wtf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
             >
-              <img 
-                src="/images/logo-pinto dao.png" 
-                alt="Pinto DAO Logo" 
-                className="mx-auto h-32 md:h-40 mb-6"
-              />
-            </motion.div>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="hero-description mt-6 mb-10"
-            >
-              The first decentralized autonomous organization dedicated to Pinto fans worldwide. 
-              Collect, trade, and govern the future of Pinto culture.
-            </motion.p>
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <a 
-                href="https://pinto.wtf" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
-              >
-                Join DAO
-              </a>
-            </motion.div>
-          </div>
+              Join DAO
+            </a>
+          </motion.div>
         </div>
       </section>
 
@@ -322,22 +313,22 @@ function App() {
               <img 
                 src="/images/logo-pinto dao.png" 
                 alt="Pinto DAO Logo" 
-                className="h-12 mb-2"
+                className="h-20 mb-2"
               />
               <p className="text-gray-400 mt-2">Decentralizing Pinto culture since 2025</p>
             </div>
             <div className="flex gap-6">
-              <a href="#" aria-label="Twitter">
+              <a href="https://x.pinto.wtf" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                 <Twitter className="social-icon" />
               </a>
-              <a href="#" aria-label="Instagram">
+              <a href="https://instagram.pinto.wtf" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <Instagram className="social-icon" />
               </a>
-              <a href="#" aria-label="YouTube">
+              <a href="https://youtube.pinto.wtf" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                 <Youtube className="social-icon" />
               </a>
-              <a href="#" aria-label="Discord">
-                <MessageCircle className="social-icon" />
+              <a href="https://discord.pinto.wtf" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+                <DiscordIcon />
               </a>
             </div>
           </div>

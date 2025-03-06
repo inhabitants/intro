@@ -254,8 +254,26 @@
 }
 
 .social-icon {
-  @apply w-8 h-8 text-white/70 hover:text-white transition-colors;
-  filter: drop-shadow(0 0 10px rgba(180, 167, 214, 0.3));
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.helen-button {
+  background: linear-gradient(to right, #ff3d00, #ff9e80);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 61, 0, 0.3);
+}
+
+.helen-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 61, 0, 0.4);
 }
 
 .magic-border {

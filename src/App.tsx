@@ -184,19 +184,68 @@ function App() {
           </p>
           
           <div className="video-grid">
-            {/* Três vídeos em loop */}
-            {[1, 2, 3].map((_, index) => (
-              <div key={`helen-video-${index}`} className="video-container">
-                <video
-                  src="/videos/helenskate.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
+            {/* Vídeos da Helen */}
+            <div className="video-container">
+              <video
+                src="/videos/helenskate.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="video-container">
+              <video
+                src="/videos/Helenacademia.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="video-container">
+              <video
+                src="/videos/helencasa.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="video-container">
+              <video
+                src="/videos/helenskate.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="video-container">
+              <video
+                src="/videos/helenskate.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <a 
+              href="https://helenai.xyz" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="helen-button"
+            >
+              Visite Helen
+            </a>
           </div>
         </div>
       </section>

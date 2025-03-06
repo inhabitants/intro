@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Twitter, Youtube, Instagram, MessageCircle } from 'lucide-react';
 
@@ -70,6 +70,16 @@ function App() {
     "https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=1000&auto=format&fit=crop"
   ];
 
+  // Referência para o vídeo de lore
+  const loreVideoRef = useRef<HTMLVideoElement>(null);
+  
+  // Função para alternar o som do vídeo
+  const toggleSound = () => {
+    if (loreVideoRef.current) {
+      loreVideoRef.current.muted = !loreVideoRef.current.muted;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#0a0a0b] text-white">
       {/* Hero Section */}
@@ -122,42 +132,27 @@ function App() {
         <div className="nft-container">
           {/* First Row */}
           <div className="nft-track">
-            {animeImages.slice(0, 10).map((image, index) => (
+            {animeImages.slice(0, 17).map((image, index) => (
               <div key={`row1-${index}`} className="nft-item">
-                <img 
-                  src={image} 
-                  alt={`Anime NFT ${index + 1}`} 
-                  className="w-full h-full object-cover"
-                  loading="lazy" 
-                />
+                <img src={image} alt={`Anime NFT ${index + 1}`} className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
           
           {/* Second Row (Reverse Direction) */}
           <div className="nft-track nft-track-reverse">
-            {animeImages.slice(10, 20).map((image, index) => (
+            {animeImages.slice(17, 34).map((image, index) => (
               <div key={`row2-${index}`} className="nft-item">
-                <img 
-                  src={image} 
-                  alt={`Anime NFT ${index + 11}`} 
-                  className="w-full h-full object-cover"
-                  loading="lazy" 
-                />
+                <img src={image} alt={`Anime NFT ${index + 18}`} className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
           
           {/* Third Row */}
           <div className="nft-track">
-            {animeImages.slice(20, 30).map((image, index) => (
+            {animeImages.slice(34, 51).map((image, index) => (
               <div key={`row3-${index}`} className="nft-item">
-                <img 
-                  src={image} 
-                  alt={`Anime NFT ${index + 21}`} 
-                  className="w-full h-full object-cover"
-                  loading="lazy" 
-                />
+                <img src={image} alt={`Anime NFT ${index + 35}`} className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
@@ -172,51 +167,33 @@ function App() {
             Dive into the rich storytelling and vibrant worlds of our anime universe.
           </p>
           
-          {/* Vídeos MP4 em loop */}
-          <div className="lore-video-grid">
-            <div className="video-container lore-video">
-              <video
-                src="/videos/helenskate.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="none"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="video-container lore-video">
-              <video
-                src="/videos/helenskate.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="none"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="video-container lore-video">
-              <video
-                src="/videos/helenskate.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="none"
-                className="w-full h-full object-cover"
-              />
+          {/* Vídeo MP4 em loop */}
+          <div className="single-video-container" onClick={toggleSound}>
+            <video
+              ref={loreVideoRef}
+              src="/videos/helenskate.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            />
+            <div className="video-overlay">
+              <button className="sound-toggle">
+                <span className="sound-icon">🔊</span>
+                <span className="sound-text">Clique para som</span>
+              </button>
             </div>
           </div>
           
           <div className="mt-12 text-center">
             <a 
-              href="#" 
+              href="https://inhabitants.zone" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="lore-button"
             >
-              Conhecer Comic
+              Conhecer Inhabitants
             </a>
           </div>
         </div>

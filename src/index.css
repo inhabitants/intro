@@ -553,3 +553,41 @@ img {
   font-size: 14px;
   letter-spacing: 0.5px;
 }
+
+/* Estilo para o botão do OpenSea */
+.opensea-button {
+  background: linear-gradient(to right, #2081E2, #3498db);
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(32, 129, 226, 0.3);
+  position: relative;
+  overflow: hidden;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.opensea-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.opensea-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(32, 129, 226, 0.5);
+}
+
+.opensea-button:hover::before {
+  left: 100%;
+}

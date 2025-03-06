@@ -127,6 +127,16 @@ function App() {
           <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto">
             Exclusive pinto-inspired digital collectibles, each with unique traits and rarities.
           </p>
+          <div className="mt-8 text-center">
+            <a 
+              href="https://opensea.io/collection/pintudo" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="opensea-button"
+            >
+              Visitar Coleção no OpenSea
+            </a>
+          </div>
         </div>
 
         <div className="nft-container">

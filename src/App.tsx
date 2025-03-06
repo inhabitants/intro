@@ -189,11 +189,11 @@ function App() {
           <h3 className="text-2xl font-bold text-center mb-4 magical-text">Versão com Vídeos MP4</h3>
           <div className="video-grid">
             {loreVideos.map((video, index) => (
-              <div key={`video-${index}`} className="video-container video-vertical">
+              <div key={`video-${index}`} className="video-container video-vertical video-pingpong">
                 <video
                   src={video}
                   autoPlay
-                  loop
+                  loop={false}
                   muted
                   playsInline
                   className="w-full h-full object-cover"
@@ -215,11 +215,11 @@ function App() {
           <div className="video-grid">
             {/* Três vídeos horizontais */}
             {[1, 2, 3].map((num, index) => (
-              <div key={`helen-video-${index}`} className="video-container video-vertical">
+              <div key={`helen-video-${index}`} className="video-container video-vertical video-pingpong">
                 <video
                   src="/videos/helenskate.mp4"
                   autoPlay
-                  loop
+                  loop={false}
                   muted
                   playsInline
                   className="w-full h-full object-cover"

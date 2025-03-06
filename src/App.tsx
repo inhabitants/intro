@@ -63,22 +63,12 @@ function App() {
     "/images/pinto51.jpg"
   ];
 
-  // Short GIF URLs for Lore section
-  const loreGifs = [
-    "/images/Inhabgif1.gif",
-    "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzI0YzM0ZDM0YjA0YjMyZTA0ZDM0YjA0YjMyZTA0ZDM0YjA0YjMyZSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/3oKIPu8kvxfWqMjc1a/giphy.gif",
-    "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzJlMDRkMzRiMDRiMzJlMDRkMzRiMDRiMzJlMDRkMzRiMDRiMzJlJmVwPXYxX2ludGVybmFsX2dpZnNfZ2lmSWQmY3Q9Zw/3o7TKoWXm3okO1kgHC/giphy.gif",
-  ];
-
   // Exemplo de vídeos MP4 para substituir GIFs
   const loreVideos = [
-    // Tentando diferentes formatos de caminho para o arquivo local
-    "./helenskate.mp4", // Arquivo na raiz da pasta public
-    "./videos/helenskate.mp4",
-    "/videos/helenskate.mp4",
-    "videos/helenskate.mp4",
-    // Fallback para URL online
-    "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzI0YzM0ZDM0YjA0YjMyZTA0ZDM0YjA0YjMyZTA0ZDM0YjA0YjMyZSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/3oKIPu8kvxfWqMjc1a/giphy.mp4",
+    "https://assets.mixkit.co/videos/preview/mixkit-waves-in-the-water-1164-large.mp4",
+    "https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-1173-large.mp4",
+    "https://assets.mixkit.co/videos/preview/mixkit-mother-with-her-little-daughter-eating-a-marshmallow-in-nature-39764-large.mp4",
+    "https://assets.mixkit.co/videos/preview/mixkit-girl-in-neon-sign-1232-large.mp4",
   ];
 
   // HelenAI images
@@ -186,7 +176,16 @@ function App() {
                   muted
                   playsInline
                   className="w-full h-full object-cover"
+                  poster="https://via.placeholder.com/400x225/1a1a1a/ffffff?text=Video+Loading"
+                  onError={(e) => {
+                    // Adiciona uma classe para mostrar um fallback visual
+                    e.currentTarget.parentElement?.classList.add('video-error');
+                  }}
                 />
+                {/* Fallback visual caso o vídeo não carregue */}
+                <div className="video-fallback">
+                  <p>Vídeo não disponível</p>
+                </div>
               </div>
             ))}
           </div>
@@ -212,7 +211,16 @@ function App() {
                   muted
                   playsInline
                   className="w-full h-full object-cover"
+                  poster="https://via.placeholder.com/400x225/1a1a1a/ffffff?text=Video+Loading"
+                  onError={(e) => {
+                    // Adiciona uma classe para mostrar um fallback visual
+                    e.currentTarget.parentElement?.classList.add('video-error');
+                  }}
                 />
+                {/* Fallback visual caso o vídeo não carregue */}
+                <div className="video-fallback">
+                  <p>Vídeo não disponível</p>
+                </div>
               </div>
             ))}
           </div>

@@ -23,6 +23,16 @@
   animation-play-state: running;
 }
 
+/* Estilo para o canvas interativo */
+.interactive-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
 /* Fundo estiloso para a seção de introdução */
 .dao-bg {
   background: linear-gradient(125deg, #0a0a0b, #1a1a2e);
@@ -56,24 +66,13 @@
   opacity: 0.5;
 }
 
-.dao-particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1;
+.dao-particles, .particle {
+  display: none;
 }
 
-.particle {
-  position: absolute;
-  display: block;
-  pointer-events: none;
-  background: linear-gradient(to right, rgba(255, 61, 0, 0.5), rgba(111, 66, 193, 0.5));
-  border-radius: 50%;
-  filter: blur(5px);
-  animation: float-particle 15s infinite ease-in-out;
+@keyframes float-particle {
+  0% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 @keyframes rotate-bg {
@@ -82,23 +81,6 @@
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-
-@keyframes float-particle {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
-    opacity: 0;
-  }
-  25% {
-    opacity: 0.5;
-  }
-  50% {
-    transform: translateY(-150px) translateX(100px);
-    opacity: 0.8;
-  }
-  75% {
-    opacity: 0.5;
   }
 }
 
@@ -673,6 +655,8 @@ img {
     0 0 15px rgba(111, 66, 193, 0.5);
   letter-spacing: 2px;
   animation: pulse-text 3s infinite alternate;
+  position: relative;
+  z-index: 10;
 }
 
 @keyframes pulse-text {
@@ -690,6 +674,14 @@ img {
   }
 }
 
+/* Adicionar um efeito de brilho ao passar o mouse sobre o título */
+.hero-title:hover {
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 61, 0, 0.8),
+    0 0 30px rgba(111, 66, 193, 0.8);
+}
+
 /* Estilo para o texto de descrição com efeito de fade-in */
 .hero-description {
   position: relative;
@@ -703,4 +695,5 @@ img {
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
 }

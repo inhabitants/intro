@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Twitter, Youtube, Instagram, MessageCircle } from 'lucide-react';
 
@@ -73,6 +73,9 @@ function App() {
   // Referência para o vídeo de lore
   const loreVideoRef = useRef<HTMLVideoElement>(null);
   
+  // Referência para o canvas da malha interativa
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  
   // Função para alternar o som do vídeo
   const toggleSound = () => {
     if (loreVideoRef.current) {
@@ -80,19 +83,171 @@ function App() {
     }
   };
 
+  // Efeito para inicializar a malha interativa
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    
+    // Configurar o canvas para ocupar toda a tela
+    canvas.width = width;
+    canvas.height = height;
+    
+    // Partículas para a malha
+    const particlesArray: Particle[] = [];
+    const numberOfParticles = 100;
+    
+    // Posição do mouse
+    let mouseX = 0;
+    let mouseY = 0;
+    
+    // Classe para as partículas
+    class Particle {
+      x: number;
+      y: number;
+      size: number;
+      baseX: number;
+      baseY: number;
+      density: number;
+      color: string;
+      
+      constructor(x: number, y: number) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 5 + 1;
+        this.baseX = x;
+        this.baseY = y;
+        this.density = (Math.random() * 30) + 1;
+        
+        // Cores aleatórias em tons de laranja e roxo
+        const colors = ['rgba(255, 61, 0, 0.8)', 'rgba(111, 66, 193, 0.8)', 'rgba(255, 158, 128, 0.8)'];
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+      }
+      
+      draw() {
+        if (!ctx) return;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+      }
+      
+      update() {
+        // Calcular a distância entre a partícula e o mouse
+        const dx = mouseX - this.x;
+        const dy = mouseY - this.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const forceDirectionX = dx / distance;
+        const forceDirectionY = dy / distance;
+        
+        // Distância máxima para interação
+        const maxDistance = 100;
+        const force = (maxDistance - distance) / maxDistance;
+        
+        // Se a distância for menor que maxDistance, mover a partícula em direção ao mouse
+        if (distance < maxDistance) {
+          this.x += forceDirectionX * force * this.density;
+          this.y += forceDirectionY * force * this.density;
+        } else {
+          // Retornar lentamente à posição original
+          if (this.x !== this.baseX) {
+            const dx = this.x - this.baseX;
+            this.x -= dx / 10;
+          }
+          if (this.y !== this.baseY) {
+            const dy = this.y - this.baseY;
+            this.y -= dy / 10;
+          }
+        }
+        
+        this.draw();
+      }
+    }
+    
+    // Inicializar partículas
+    function init() {
+      particlesArray.length = 0;
+      for (let i = 0; i < numberOfParticles; i++) {
+        const x = Math.random() * width;
+        const y = Math.random() * height;
+        particlesArray.push(new Particle(x, y));
+      }
+    }
+    
+    // Conectar partículas próximas com linhas
+    function connect() {
+      let opacityValue = 1;
+      for (let a = 0; a < particlesArray.length; a++) {
+        for (let b = a; b < particlesArray.length; b++) {
+          const dx = particlesArray[a].x - particlesArray[b].x;
+          const dy = particlesArray[a].y - particlesArray[b].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < 120) {
+            opacityValue = 1 - (distance / 120);
+            if (ctx) {
+              ctx.strokeStyle = `rgba(255, 255, 255, ${opacityValue * 0.4})`;
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+              ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+              ctx.stroke();
+            }
+          }
+        }
+      }
+    }
+    
+    // Função de animação
+    function animate() {
+      requestAnimationFrame(animate);
+      if (!ctx) return;
+      
+      ctx.clearRect(0, 0, width, height);
+      
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+      }
+      connect();
+    }
+    
+    // Atualizar posição do mouse
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.x;
+      mouseY = e.y;
+    });
+    
+    // Redimensionar canvas quando a janela for redimensionada
+    window.addEventListener('resize', () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+      init();
+    });
+    
+    // Iniciar animação
+    init();
+    animate();
+    
+    // Limpar event listeners quando o componente for desmontado
+    return () => {
+      window.removeEventListener('mousemove', () => {});
+      window.removeEventListener('resize', () => {});
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#0a0a0b] text-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden dao-bg">
-        <div className="dao-particles">
-          <div className="particle" style={{ width: '80px', height: '80px', left: '10%', top: '20%', animationDelay: '0s' }}></div>
-          <div className="particle" style={{ width: '50px', height: '50px', left: '20%', top: '80%', animationDelay: '2s' }}></div>
-          <div className="particle" style={{ width: '70px', height: '70px', left: '50%', top: '50%', animationDelay: '4s' }}></div>
-          <div className="particle" style={{ width: '40px', height: '40px', left: '80%', top: '30%', animationDelay: '6s' }}></div>
-          <div className="particle" style={{ width: '60px', height: '60px', left: '70%', top: '70%', animationDelay: '8s' }}></div>
-          <div className="particle" style={{ width: '30px', height: '30px', left: '30%', top: '40%', animationDelay: '10s' }}></div>
-          <div className="particle" style={{ width: '90px', height: '90px', left: '90%', top: '10%', animationDelay: '12s' }}></div>
-        </div>
+        <canvas ref={canvasRef} className="interactive-canvas"></canvas>
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1 

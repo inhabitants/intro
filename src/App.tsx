@@ -150,6 +150,12 @@ function App() {
                 <img src={image} alt={`Anime NFT ${index + 1}`} className="w-full h-full object-cover" />
               </div>
             ))}
+            {/* Duplicação das imagens para garantir um loop contínuo */}
+            {animeImages.slice(0, 17).map((image, index) => (
+              <div key={`row1-dup-${index}`} className="nft-item">
+                <img src={image} alt={`Anime NFT ${index + 1}`} className="w-full h-full object-cover" />
+              </div>
+            ))}
           </div>
           
           {/* Second Row (Reverse Direction) */}
@@ -159,12 +165,24 @@ function App() {
                 <img src={image} alt={`Anime NFT ${index + 18}`} className="w-full h-full object-cover" />
               </div>
             ))}
+            {/* Duplicação das imagens para garantir um loop contínuo */}
+            {animeImages.slice(17, 34).map((image, index) => (
+              <div key={`row2-dup-${index}`} className="nft-item">
+                <img src={image} alt={`Anime NFT ${index + 18}`} className="w-full h-full object-cover" />
+              </div>
+            ))}
           </div>
           
           {/* Third Row */}
           <div className="nft-track">
             {animeImages.slice(34, 51).map((image, index) => (
               <div key={`row3-${index}`} className="nft-item">
+                <img src={image} alt={`Anime NFT ${index + 35}`} className="w-full h-full object-cover" />
+              </div>
+            ))}
+            {/* Duplicação das imagens para garantir um loop contínuo */}
+            {animeImages.slice(34, 51).map((image, index) => (
+              <div key={`row3-dup-${index}`} className="nft-item">
                 <img src={image} alt={`Anime NFT ${index + 35}`} className="w-full h-full object-cover" />
               </div>
             ))}

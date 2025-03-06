@@ -136,10 +136,12 @@
   display: flex;
   width: fit-content;
   animation: scroll 60s linear infinite;
+  will-change: transform;
 }
 
 .nft-track-reverse {
   animation: scroll-reverse 50s linear infinite;
+  will-change: transform;
 }
 
 .nft-item {

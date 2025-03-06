@@ -65,10 +65,10 @@ function App() {
 
   // Exemplo de vídeos MP4 para substituir GIFs
   const loreVideos = [
-    "https://assets.mixkit.co/videos/preview/mixkit-waves-in-the-water-1164-large.mp4",
-    "https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-1173-large.mp4",
-    "https://assets.mixkit.co/videos/preview/mixkit-mother-with-her-little-daughter-eating-a-marshmallow-in-nature-39764-large.mp4",
-    "https://assets.mixkit.co/videos/preview/mixkit-girl-in-neon-sign-1232-large.mp4",
+    "https://www.youtube.com/embed/TcMBFSGVi1c?autoplay=0&mute=1&controls=1&rel=0",
+    "https://www.youtube.com/embed/6ZfuNTqbHE8?autoplay=0&mute=1&controls=1&rel=0",
+    "https://www.youtube.com/embed/8YjFbMbfXaQ?autoplay=0&mute=1&controls=1&rel=0",
+    "https://www.youtube.com/embed/d9MyW72ELq0?autoplay=0&mute=1&controls=1&rel=0",
   ];
 
   // HelenAI images
@@ -169,92 +169,19 @@ function App() {
           <div className="video-grid">
             {loreVideos.map((video, index) => (
               <div key={`video-${index}`} className="video-container video-vertical">
-                <video
+                <iframe
                   src={video}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
-                  poster="https://via.placeholder.com/400x225/1a1a1a/ffffff?text=Video+Loading"
-                  onError={(e) => {
-                    // Adiciona uma classe para mostrar um fallback visual
-                    e.currentTarget.parentElement?.classList.add('video-error');
-                  }}
-                />
-                {/* Fallback visual caso o vídeo não carregue */}
-                <div className="video-fallback">
-                  <p>Vídeo não disponível</p>
-                </div>
+                  title={`Anime Lore ${index + 1}`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      {/* HelenAI Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4 magical-text">HelenAI</h2>
-          <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">
-            Meet Helen, your personal pinto companion powered by advanced AI.
-          </p>
-          
-          <div className="video-grid">
-            {/* Três vídeos horizontais */}
-            {[1, 2, 3].map((num, index) => (
-              <div key={`helen-video-${index}`} className="video-container video-vertical">
-                <video
-                  src={loreVideos[index % loreVideos.length]}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
-                  poster="https://via.placeholder.com/400x225/1a1a1a/ffffff?text=Video+Loading"
-                  onError={(e) => {
-                    // Adiciona uma classe para mostrar um fallback visual
-                    e.currentTarget.parentElement?.classList.add('video-error');
-                  }}
-                />
-                {/* Fallback visual caso o vídeo não carregue */}
-                <div className="video-fallback">
-                  <p>Vídeo não disponível</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-12 border-t border-white/10">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-6 md:mb-0">
-              <h2 className="text-2xl font-bold magical-text">Pinto DAO</h2>
-              <p className="text-gray-400 mt-2">Decentralizing Pinto culture since 2025</p>
-            </div>
-            <div className="flex gap-6">
-              <a href="#" aria-label="Twitter">
-                <Twitter className="social-icon" />
-              </a>
-              <a href="#" aria-label="Instagram">
-                <Instagram className="social-icon" />
-              </a>
-              <a href="#" aria-label="YouTube">
-                <Youtube className="social-icon" />
-              </a>
-              <a href="#" aria-label="Discord">
-                <MessageCircle className="social-icon" />
-              </a>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-white/10 text-center text-gray-500">
-            <p>© 2025 Pinto DAO. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

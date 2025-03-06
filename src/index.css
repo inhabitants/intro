@@ -157,24 +157,19 @@
   position: relative;
 }
 
-.video-vertical iframe {
+.video-vertical video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border: none;
+  object-fit: cover;
+  background-color: #000;
   border-radius: 12px;
 }
 
 .video-vertical::before {
-  display: none; /* Removendo o notch do celular */
-}
-
-.video-vertical video {
-  object-fit: cover;
-  background-color: #000;
-  border-radius: 12px;
+  display: none;
 }
 
 /* Estilos para o fallback de vídeo */
@@ -281,51 +276,11 @@
   z-index: -1;
 }
 
-/* Estilos para links de vídeo */
-.video-link {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 64px;
-  height: 64px;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
-}
-
-.video-link:hover .play-button {
-  background-color: rgba(255, 0, 0, 0.8);
-  transform: translate(-50%, -50%) scale(1.1);
-}
-
-.video-link::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%);
-  pointer-events: none;
-}
-
-.video-link:hover img {
-  transform: scale(1.05);
-}
-
-.video-link img {
-  transition: transform 0.5s ease;
+/* Estilos para a grade de vídeos */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }

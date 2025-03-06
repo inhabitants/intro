@@ -63,25 +63,8 @@ function App() {
     "/images/pinto51.jpg"
   ];
 
-  // Vídeos para as seções Lore e HelenAI
-  const videoData = [
-    {
-      id: "TcMBFSGVi1c",
-      title: "Avengers: Endgame"
-    },
-    {
-      id: "6ZfuNTqbHE8",
-      title: "Avatar 2"
-    },
-    {
-      id: "8YjFbMbfXaQ",
-      title: "Dune"
-    },
-    {
-      id: "d9MyW72ELq0",
-      title: "Star Wars"
-    }
-  ];
+  // Vídeos locais para as seções Lore e HelenAI
+  const videoSrc = "/videos/helenskate.mp4";
 
   // HelenAI images
   const helenAIImages = [
@@ -177,27 +160,19 @@ function App() {
             Dive into the rich storytelling and vibrant worlds of our anime universe.
           </p>
           
-          {/* Vídeos como imagens com links */}
+          {/* Vídeos MP4 em loop */}
           <div className="video-grid">
-            {videoData.map((video, index) => (
+            {[1, 2, 3, 4].map((_, index) => (
               <div key={`video-${index}`} className="video-container video-vertical">
-                <a 
-                  href={`https://www.youtube.com/watch?v=${video.id}`} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="video-link"
-                >
-                  <img 
-                    src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`} 
-                    alt={video.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="play-button">
-                    <svg viewBox="0 0 24 24" width="64" height="64" fill="white">
-                      <path d="M8 5v14l11-7z"></path>
-                    </svg>
-                  </div>
-                </a>
+                <video
+                  src={videoSrc}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                  poster="/images/pinto1.jpg"
+                />
               </div>
             ))}
           </div>
@@ -213,26 +188,18 @@ function App() {
           </p>
           
           <div className="video-grid">
-            {/* Três vídeos como imagens com links */}
-            {videoData.slice(0, 3).map((video, index) => (
+            {/* Três vídeos em loop */}
+            {[1, 2, 3].map((_, index) => (
               <div key={`helen-video-${index}`} className="video-container video-vertical">
-                <a 
-                  href={`https://www.youtube.com/watch?v=${video.id}`} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="video-link"
-                >
-                  <img 
-                    src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`} 
-                    alt={video.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="play-button">
-                    <svg viewBox="0 0 24 24" width="64" height="64" fill="white">
-                      <path d="M8 5v14l11-7z"></path>
-                    </svg>
-                  </div>
-                </a>
+                <video
+                  src={videoSrc}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                  poster="/images/helen1.jpg"
+                />
               </div>
             ))}
           </div>

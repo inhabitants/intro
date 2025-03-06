@@ -85,6 +85,17 @@ function App() {
     <div className="min-h-screen bg-[#0a0a0b] text-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden dao-bg">
+        <div className="video-background">
+          <video
+            src="/videos/Pintointro.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="video-bg"
+          />
+          <div className="video-overlay-bg"></div>
+        </div>
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1 

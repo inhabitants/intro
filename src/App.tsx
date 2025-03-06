@@ -73,7 +73,7 @@ function App() {
 
   // HelenAI images
   const helenAIImages = [
-    "https://images.unsplash.com/photo-1639628735078-ed2f038a193e?q=80&w=1000&auto=format&fit=crop",
+    "/images/hellen1.jpg",
     "https://images.unsplash.com/photo-1639628735042-31baaf048d15?q=80&w=1000&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=1000&auto=format&fit=crop"
   ];

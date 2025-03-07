@@ -256,7 +256,7 @@ function App() {
                   className="flex flex-col sm:flex-row gap-4 justify-center"
                 >
                   <a 
-                    href="https://pinto.wtf" 
+                    href="https://dao.pinto.wtf" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"

@@ -270,10 +270,9 @@ function App() {
             {/* NFT Collection Section */}
             <section className="py-20 overflow-hidden">
               <div className="container mx-auto px-4 mb-12">
-                <h2 className="text-4xl font-bold text-center mb-4 magical-text">NFT Collection</h2>
+                <h2 className="text-4xl font-bold text-center mb-4 magical-text">Pinto NFTs</h2>
                 <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto">
-                  Exclusive Pinto-inspired digital collectibles, each with unique traits and rarities
-                  Join our vibrant community of collectors and enthusiasts
+                  Exclusive digital collectibles, each with unique traits and rarities, join our community of experimenters and Web3 enthusiasts
                 </p>
                 <div className="mt-8 text-center">
                   <a 

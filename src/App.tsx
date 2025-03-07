@@ -272,8 +272,8 @@ function App() {
               <div className="container mx-auto px-4 mb-12">
                 <h2 className="text-4xl font-bold text-center mb-4 magical-text">NFT Collection</h2>
                 <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto">
-                  Exclusive Pinto-inspired digital collectibles, each with unique traits and rarities.
-                  Join our vibrant community of collectors and enthusiasts.
+                  Exclusive Pinto-inspired digital collectibles, each with unique traits and rarities
+                  Join our vibrant community of collectors and enthusiasts
                 </p>
                 <div className="mt-8 text-center">
                   <a 
@@ -340,8 +340,8 @@ function App() {
               <div className="container mx-auto px-4">
                 <h2 className="text-4xl font-bold text-center mb-4 magical-text">Meet Helen AI</h2>
                 <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">
-                  Your digital companion powered by advanced artificial intelligence.
-                  Helen can assist, entertain, and bring a touch of magic to your everyday life.
+                  Digital companion powered by advanced artificial intelligence
+                  Helen can assist, entertain, and bring a touch of magic to your everyday life
                 </p>
                 
                 <div className="helen-video-grid">
@@ -399,8 +399,8 @@ function App() {
               <div className="container mx-auto px-4">
                 <h2 className="text-4xl font-bold text-center mb-4 magical-text">Helen's Universe</h2>
                 <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">
-                  Explore the rich narrative and vibrant world of Helen's universe.
-                  Immerse yourself in the story that connects our digital and physical worlds.
+                  Explore the rich narrative and vibrant world of Helen's universe
+                  Immerse yourself in the story that connects our digital and physical worlds
                 </p>
                 
                 {/* Vídeo MP4 em loop */}
@@ -463,7 +463,7 @@ function App() {
                   </div>
                 </div>
                 <div className="mt-8 pt-8 border-t border-white/10 text-center text-gray-500">
-                  <p>© 2023 Pinto DAO. All rights reserved.</p>
+                  <p>© 2025 Pinto DAO. All rights reserved.</p>
                 </div>
               </div>
             </footer>

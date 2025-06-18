@@ -279,8 +279,8 @@ function App() {
                   {/* HelenAI */}
                   <div className="bg-[#111112] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
                     <img
-                      src="https://via.placeholder.com/400x250?text=HelenAI"
-                      alt="HelenAI placeholder"
+                      src="/images/helenaiwtf.png"
+                      alt="HelenAI"
                       className="w-full h-40 object-cover"
                     />
                     <div className="p-6 flex flex-col flex-1">
@@ -302,8 +302,8 @@ function App() {
                   {/* AITag */}
                   <div className="bg-[#111112] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
                     <img
-                      src="https://via.placeholder.com/400x250?text=AITag"
-                      alt="AITag placeholder"
+                      src="/images/aitagapp.png"
+                      alt="AITag"
                       className="w-full h-40 object-cover"
                     />
                     <div className="p-6 flex flex-col flex-1">
@@ -325,8 +325,8 @@ function App() {
                   {/* Virtuals Bot */}
                   <div className="bg-[#111112] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
                     <img
-                      src="https://via.placeholder.com/400x250?text=VirtualsBot"
-                      alt="Virtuals Bot placeholder"
+                      src="/images/botsinners.png"
+                      alt="Virtuals Bot"
                       className="w-full h-40 object-cover"
                     />
                     <div className="p-6 flex flex-col flex-1">

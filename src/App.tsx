@@ -289,7 +289,7 @@ function App() {
                     <div className="p-6 flex flex-col flex-1">
                       <h3 className="text-2xl font-semibold mb-2 text-center">HelenAI.wtf</h3>
                       <p className="text-gray-400 text-sm mb-4 text-center flex-1">
-                      Self-Governed Humanized Brand Agent.
+                      Self-Governed Humanized Brand Agent
                       </p>
                       <a
                         href="https://helenai.wtf"
@@ -312,7 +312,7 @@ function App() {
                     <div className="p-6 flex flex-col flex-1">
                       <h3 className="text-2xl font-semibold mb-2 text-center">AITag.app</h3>
                       <p className="text-gray-400 text-sm mb-4 text-center flex-1">
-                        A living curation of AI tools.
+                        A living curation of AI tools
                       </p>
                       <a
                         href="https://aitag.app"
@@ -335,7 +335,7 @@ function App() {
                     <div className="p-6 flex flex-col flex-1">
                       <h3 className="text-2xl font-semibold mb-2 text-center">Virtuals Bot</h3>
                       <p className="text-gray-400 text-sm mb-4 text-center flex-1">
-                        Automated trader bot at Virtuals.
+                        Automated trader bot at Virtuals
                       </p>
                       <a
                         href="https://dao.pinto.wtf/#produtos"
@@ -343,7 +343,7 @@ function App() {
                         rel="noopener noreferrer"
                         className="mt-auto text-center px-4 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
                       >
-                        Join Discord
+                        More Info
                       </a>
                     </div>
                   </div>
@@ -356,7 +356,7 @@ function App() {
                     <div className="p-6 flex flex-col flex-1">
                       <h3 className="text-2xl font-semibold mb-2 text-center">Your Idea Here</h3>
                       <p className="text-gray-400 text-sm mb-4 text-center flex-1">
-                        The next headline project could be yours. Come build with the Pinto community!
+                        The next headline project could be yours. Come build with the Pinto DAO!
                       </p>
                       <a
                         href="https://dao.pinto.wtf"

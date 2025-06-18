@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Twitter, Youtube, Instagram } from 'lucide-react';
+import { Twitter, Youtube, Instagram, Sparkles } from 'lucide-react';
 
 // Componente para o ícone do Discord
 const DiscordIcon = () => (
@@ -286,7 +286,7 @@ function App() {
                     <div className="p-6 flex flex-col flex-1">
                       <h3 className="text-2xl font-semibold mb-2 text-center">HelenAI.wtf</h3>
                       <p className="text-gray-400 text-sm mb-4 text-center flex-1">
-                        Your AI-powered digital companion redefining relationships between humans and machines.
+                      Self-Governed Humanized Brand Agent.
                       </p>
                       <a
                         href="https://helenai.wtf"
@@ -309,7 +309,7 @@ function App() {
                     <div className="p-6 flex flex-col flex-1">
                       <h3 className="text-2xl font-semibold mb-2 text-center">AITag.app</h3>
                       <p className="text-gray-400 text-sm mb-4 text-center flex-1">
-                        Effortless content tagging powered by cutting-edge computer vision.
+                        A living curation of AI tools.
                       </p>
                       <a
                         href="https://aitag.app"
@@ -332,10 +332,10 @@ function App() {
                     <div className="p-6 flex flex-col flex-1">
                       <h3 className="text-2xl font-semibold mb-2 text-center">Virtuals Bot</h3>
                       <p className="text-gray-400 text-sm mb-4 text-center flex-1">
-                        Automated assistant keeping the Pinto Discord buzzing 24/7.
+                        Automated trader bot at Virtuals.
                       </p>
                       <a
-                        href="https://discord.pinto.wtf"
+                        href="https://dao.pinto.wtf/#produtos"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="mt-auto text-center px-4 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
@@ -347,11 +347,9 @@ function App() {
 
                   {/* Community Slot */}
                   <div className="bg-[#111112] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
-                    <img
-                      src="https://via.placeholder.com/400x250?text=Your+Project"
-                      alt="Your project placeholder"
-                      className="w-full h-40 object-cover"
-                    />
+                    <div className="w-full h-40 flex items-center justify-center bg-[#1b1b1d]">
+                      <Sparkles size={48} className="text-primary" />
+                    </div>
                     <div className="p-6 flex flex-col flex-1">
                       <h3 className="text-2xl font-semibold mb-2 text-center">Your Idea Here</h3>
                       <p className="text-gray-400 text-sm mb-4 text-center flex-1">

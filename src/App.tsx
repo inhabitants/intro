@@ -267,6 +267,110 @@ function App() {
               </div>
             </section>
 
+            {/* Projects Section */}
+            <section className="py-20 section-alt">
+              <div className="container mx-auto px-4">
+                <h2 className="text-4xl font-bold text-center mb-4 magical-text">Pinto Creations</h2>
+                <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">
+                  A glimpse of what our builders are shipping. Bring your idea and ship it with us!
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {/* HelenAI */}
+                  <div className="bg-[#111112] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
+                    <img
+                      src="https://via.placeholder.com/400x250?text=HelenAI"
+                      alt="HelenAI placeholder"
+                      className="w-full h-40 object-cover"
+                    />
+                    <div className="p-6 flex flex-col flex-1">
+                      <h3 className="text-2xl font-semibold mb-2 text-center">HelenAI.wtf</h3>
+                      <p className="text-gray-400 text-sm mb-4 text-center flex-1">
+                        Your AI-powered digital companion redefining relationships between humans and machines.
+                      </p>
+                      <a
+                        href="https://helenai.wtf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-auto text-center px-4 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
+                      >
+                        Visit
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* AITag */}
+                  <div className="bg-[#111112] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
+                    <img
+                      src="https://via.placeholder.com/400x250?text=AITag"
+                      alt="AITag placeholder"
+                      className="w-full h-40 object-cover"
+                    />
+                    <div className="p-6 flex flex-col flex-1">
+                      <h3 className="text-2xl font-semibold mb-2 text-center">AITag.app</h3>
+                      <p className="text-gray-400 text-sm mb-4 text-center flex-1">
+                        Effortless content tagging powered by cutting-edge computer vision.
+                      </p>
+                      <a
+                        href="https://aitag.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-auto text-center px-4 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
+                      >
+                        Visit
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Virtuals Bot */}
+                  <div className="bg-[#111112] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
+                    <img
+                      src="https://via.placeholder.com/400x250?text=VirtualsBot"
+                      alt="Virtuals Bot placeholder"
+                      className="w-full h-40 object-cover"
+                    />
+                    <div className="p-6 flex flex-col flex-1">
+                      <h3 className="text-2xl font-semibold mb-2 text-center">Virtuals Bot</h3>
+                      <p className="text-gray-400 text-sm mb-4 text-center flex-1">
+                        Automated assistant keeping the Pinto Discord buzzing 24/7.
+                      </p>
+                      <a
+                        href="https://discord.pinto.wtf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-auto text-center px-4 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
+                      >
+                        Join Discord
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Community Slot */}
+                  <div className="bg-[#111112] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
+                    <img
+                      src="https://via.placeholder.com/400x250?text=Your+Project"
+                      alt="Your project placeholder"
+                      className="w-full h-40 object-cover"
+                    />
+                    <div className="p-6 flex flex-col flex-1">
+                      <h3 className="text-2xl font-semibold mb-2 text-center">Your Idea Here</h3>
+                      <p className="text-gray-400 text-sm mb-4 text-center flex-1">
+                        The next headline project could be yours. Come build with the Pinto community!
+                      </p>
+                      <a
+                        href="https://dao.pinto.wtf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-auto text-center px-4 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
+                      >
+                        Build With Us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
             {/* NFT Collection Section */}
             <section className="py-20 overflow-hidden">
               <div className="container mx-auto px-4 mb-12">

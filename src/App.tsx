@@ -1,6 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Twitter, Youtube, Instagram, Sparkles } from 'lucide-react';
+import helenAIImg from '/images/helenaiwtf.png';
+import aiTagImg from '/images/aitagapp.png';
+import botImg from '/images/botsinners.png';
 
 // Componente para o ícone do Discord
 const DiscordIcon = () => (
@@ -279,7 +282,7 @@ function App() {
                   {/* HelenAI */}
                   <div className="bg-[#111112] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
                     <img
-                      src="/images/helenaiwtf.png"
+                      src={helenAIImg}
                       alt="HelenAI"
                       className="w-full h-40 object-cover"
                     />
@@ -302,7 +305,7 @@ function App() {
                   {/* AITag */}
                   <div className="bg-[#111112] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
                     <img
-                      src="/images/aitagapp.png"
+                      src={aiTagImg}
                       alt="AITag"
                       className="w-full h-40 object-cover"
                     />
@@ -325,7 +328,7 @@ function App() {
                   {/* Virtuals Bot */}
                   <div className="bg-[#111112] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
                     <img
-                      src="/images/botsinners.png"
+                      src={botImg}
                       alt="Virtuals Bot"
                       className="w-full h-40 object-cover"
                     />

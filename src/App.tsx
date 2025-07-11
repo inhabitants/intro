@@ -103,12 +103,7 @@ function App() {
     "/images/pinto51.jpg"
   ];
 
-  // HelenAI images
-  const helenAIImages = [
-    "/images/helen1.jpg",
-    "https://images.unsplash.com/photo-1639628735042-31baaf048d15?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=1000&auto=format&fit=crop"
-  ];
+
 
   // Estado para controlar o carregamento
   const [isLoading, setIsLoading] = useState(true);
@@ -116,7 +111,7 @@ function App() {
   
   // Refs para os vídeos
   const loreVideoRef = useRef<HTMLVideoElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+
   
   // Toggle sound function
   const toggleSound = () => {

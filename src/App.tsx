@@ -2,9 +2,9 @@ import { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Twitter, Youtube, Instagram, Sparkles } from 'lucide-react';
 import { Analytics } from "@vercel/analytics/next"
-import helenAIImg from '/images/helenaiwtf.png';
-import aiTagImg from '/images/aitagapp.png';
-import botImg from '/images/botsinners.png';
+const helenAIImg = '/images/helenaiwtf.png';
+const aiTagImg = '/images/aitagapp.png';
+const botImg = '/images/botsinners.png';
 
 // Componente para o ícone do Discord
 const DiscordIcon = () => (

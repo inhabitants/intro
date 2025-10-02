@@ -225,19 +225,51 @@ function App() {
             transition={{ duration: 0.5 }}
             className="site-content"
           >
-            {/* Navbar com logo */}
+            {/* Navbar com logo e menu */}
             <header className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-sm">
-              <div className="container mx-auto px-4 py-3 flex justify-start">
+              <div className="container mx-auto px-4 py-3 flex justify-between items-center">
                 <img 
                   src="/images/logo-pinto dao.png" 
                   alt="Pinto DAO Logo" 
-                  className="h-28 object-contain"
+                  className="h-20 md:h-28 object-contain"
                 />
+                <nav className="hidden md:flex gap-6 lg:gap-8">
+                  <a 
+                    href="#home" 
+                    className="text-white hover:text-primary transition-colors font-semibold"
+                  >
+                    Home
+                  </a>
+                  <a 
+                    href="#projects" 
+                    className="text-white hover:text-primary transition-colors font-semibold"
+                  >
+                    Projects
+                  </a>
+                  <a 
+                    href="#nfts" 
+                    className="text-white hover:text-primary transition-colors font-semibold"
+                  >
+                    NFTs
+                  </a>
+                  <a 
+                    href="#helen" 
+                    className="text-white hover:text-primary transition-colors font-semibold"
+                  >
+                    Helen AI
+                  </a>
+                  <a 
+                    href="#lore" 
+                    className="text-white hover:text-primary transition-colors font-semibold"
+                  >
+                    Lore
+                  </a>
+                </nav>
               </div>
             </header>
             
             {/* Hero Section */}
-            <section className="relative min-h-screen flex items-center justify-center overflow-hidden dao-bg">
+            <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden dao-bg">
               <div className="video-background">
                 <video
                   src="/videos/Pintointro.mp4"
@@ -269,7 +301,7 @@ function App() {
             </section>
 
             {/* Projects Section */}
-            <section className="py-20 section-alt">
+            <section id="projects" className="py-20 section-alt">
               <div className="container mx-auto px-4">
                 <h2 className="text-4xl font-bold text-center mb-4 magical-text">Pinto Creations</h2>
                 <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">
@@ -295,7 +327,7 @@ function App() {
                         rel="noopener noreferrer"
                         className="mt-auto text-center px-4 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
                       >
-                        Visit
+                        Meet Helen Ailith
                       </a>
                     </div>
                   </div>
@@ -318,7 +350,7 @@ function App() {
                         rel="noopener noreferrer"
                         className="mt-auto text-center px-4 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
                       >
-                        Visit
+                        Search
                       </a>
                     </div>
                   </div>
@@ -417,7 +449,7 @@ function App() {
             </section>
 
             {/* NFT Collection Section */}
-            <section className="py-20 overflow-hidden">
+            <section id="nfts" className="py-20 overflow-hidden">
               <div className="container mx-auto px-4 mb-12">
                 <h2 className="text-4xl font-bold text-center mb-4 magical-text">Pinto NFTs</h2>
                 <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto">
@@ -484,7 +516,7 @@ function App() {
             </section>
 
             {/* HelenAI Section - Movida para antes da seção Lore */}
-            <section className="py-20 helen-section">
+            <section id="helen" className="py-20 helen-section">
               <div className="container mx-auto px-4">
                 <h2 className="text-4xl font-bold text-center mb-4 magical-text">Meet Helen AI</h2>
                 <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">
@@ -543,7 +575,7 @@ function App() {
             </section>
 
             {/* Lore Section with Videos - Movida para depois da seção Helen */}
-            <section className="py-20 lore-section">
+            <section id="lore" className="py-20 lore-section">
               <div className="container mx-auto px-4">
                 <h2 className="text-4xl font-bold text-center mb-4 magical-text">Helen's Universe</h2>
                 <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">

@@ -483,7 +483,7 @@ function App() {
                 
                 <div className="mt-12 text-center">
                   <a 
-                    href="https://helenai.xyz" 
+                    href="https://helenai.wtf" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="helen-button"

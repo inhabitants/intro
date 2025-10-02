@@ -5,6 +5,8 @@ import { Analytics } from "@vercel/analytics/next"
 const helenAIImg = '/images/helenaiwtf.png';
 const aiTagImg = '/images/aitagapp.png';
 const botImg = '/images/botsinners.png';
+const sapiensImg = '/images/Ecossistema-sapiens-sinteticos.png';
+const chickWarsImg = '/images/chickwar.png';
 
 // Componente para o ícone do Discord
 const DiscordIcon = () => (
@@ -274,7 +276,7 @@ function App() {
                   A glimpse of what our builders are shipping. Bring your idea and ship it with us!
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8">
                   {/* HelenAI */}
                   <div className="bg-[#111112] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
                     <img
@@ -340,6 +342,52 @@ function App() {
                         className="mt-auto text-center px-4 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
                       >
                         More Info
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Sapiens Sintéticos */}
+                  <div className="bg-[#111112] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
+                    <img
+                      src={sapiensImg}
+                      alt="Sapiens Sintéticos"
+                      className="w-full h-40 object-cover"
+                    />
+                    <div className="p-6 flex flex-col flex-1">
+                      <h3 className="text-2xl font-semibold mb-2 text-center">Sapiens Sintéticos</h3>
+                      <p className="text-gray-400 text-sm mb-4 text-center flex-1">
+                        Ecossistema de aprendizagem e ferramentas de AI
+                      </p>
+                      <a
+                        href="https://www.sapiensintetico.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-auto text-center px-4 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
+                      >
+                        Visit
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Chick Wars */}
+                  <div className="bg-[#111112] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
+                    <img
+                      src={chickWarsImg}
+                      alt="Chick Wars"
+                      className="w-full h-40 object-cover"
+                    />
+                    <div className="p-6 flex flex-col flex-1">
+                      <h3 className="text-2xl font-semibold mb-2 text-center">Chick Wars</h3>
+                      <p className="text-gray-400 text-sm mb-4 text-center flex-1">
+                        Minigame ganhador de competição tier 2
+                      </p>
+                      <a
+                        href="https://remix.gg/?game=83c05a35-b182-42e4-85ec-a9df4926decf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-auto text-center px-4 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
+                      >
+                        Play
                       </a>
                     </div>
                   </div>

@@ -7,6 +7,7 @@ const aiTagImg = '/images/aitagapp.png';
 const botImg = '/images/botsinners.png';
 const sapiensImg = '/images/Ecossistema-sapiens-sinteticos.png';
 const chickWarsImg = '/images/chickwar.png';
+const pbrasilYoutubeImg = '/images/pbrasilyoutube.jpeg';
 
 // Componente para o ícone do Discord
 const DiscordIcon = () => (
@@ -414,6 +415,29 @@ function App() {
                         className="mt-auto text-center px-4 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
                       >
                         Play Now
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* PBrasil YouTube */}
+                  <div className="bg-[#111112] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
+                    <img
+                      src={pbrasilYoutubeImg}
+                      alt="PBrasil YouTube"
+                      className="w-full h-40 object-cover"
+                    />
+                    <div className="p-6 flex flex-col flex-1">
+                      <h3 className="text-2xl font-semibold mb-2 text-center">Web3 & AI Talks</h3>
+                      <p className="text-gray-400 text-sm mb-4 text-center flex-1">
+                        Interviews with special guests on Web3 and AI
+                      </p>
+                      <a
+                        href="https://www.youtube.com/@PBrasilDAO"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-auto text-center px-4 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
+                      >
+                        Watch Now
                       </a>
                     </div>
                   </div>

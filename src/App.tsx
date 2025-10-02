@@ -256,13 +256,7 @@ function App() {
                     href="#helen" 
                     className="text-white hover:text-primary transition-colors font-semibold"
                   >
-                    Helen AI
-                  </a>
-                  <a 
-                    href="#lore" 
-                    className="text-white hover:text-primary transition-colors font-semibold"
-                  >
-                    Lore
+                    Helen Ailith
                   </a>
                 </nav>
               </div>
@@ -515,10 +509,10 @@ function App() {
               </div>
             </section>
 
-            {/* HelenAI Section - Movida para antes da seção Lore */}
+            {/* Helen Ailith Section */}
             <section id="helen" className="py-20 helen-section">
               <div className="container mx-auto px-4">
-                <h2 className="text-4xl font-bold text-center mb-4 magical-text">Meet Helen AI</h2>
+                <h2 className="text-4xl font-bold text-center mb-4 magical-text">Meet Helen Ailith</h2>
                 <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">
                   Digital companion powered by advanced artificial intelligence
                   Helen can assist, entertain, and bring a touch of magic to your everyday life
@@ -568,16 +562,16 @@ function App() {
                     rel="noopener noreferrer" 
                     className="helen-button"
                   >
-                    Experience Helen AI
+                    Experience Helen Ailith
                   </a>
                 </div>
               </div>
             </section>
 
-            {/* Lore Section with Videos - Movida para depois da seção Helen */}
+            {/* Lore Section with Videos */}
             <section id="lore" className="py-20 lore-section">
               <div className="container mx-auto px-4">
-                <h2 className="text-4xl font-bold text-center mb-4 magical-text">Helen's Universe</h2>
+                <h2 className="text-4xl font-bold text-center mb-4 magical-text">Helen Ailith's Universe</h2>
                 <p className="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">
                   Explore the rich narrative and vibrant world of Helen's universe
                   Immerse yourself in the story that connects our digital and physical worlds

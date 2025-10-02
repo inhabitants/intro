@@ -356,7 +356,7 @@ function App() {
                     <div className="p-6 flex flex-col flex-1">
                       <h3 className="text-2xl font-semibold mb-2 text-center">Sapiens Sintéticos</h3>
                       <p className="text-gray-400 text-sm mb-4 text-center flex-1">
-                        Ecossistema de aprendizagem e ferramentas de AI
+                        AI learning ecosystem and tools platform
                       </p>
                       <a
                         href="https://www.sapiensintetico.com"
@@ -364,7 +364,7 @@ function App() {
                         rel="noopener noreferrer"
                         className="mt-auto text-center px-4 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
                       >
-                        Visit
+                        Explore
                       </a>
                     </div>
                   </div>
@@ -379,7 +379,7 @@ function App() {
                     <div className="p-6 flex flex-col flex-1">
                       <h3 className="text-2xl font-semibold mb-2 text-center">Chick Wars</h3>
                       <p className="text-gray-400 text-sm mb-4 text-center flex-1">
-                        Minigame ganhador de competição tier 2
+                        Award-winning Tier 2 game competition winner
                       </p>
                       <a
                         href="https://remix.gg/?game=83c05a35-b182-42e4-85ec-a9df4926decf"
@@ -387,7 +387,7 @@ function App() {
                         rel="noopener noreferrer"
                         className="mt-auto text-center px-4 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg font-bold text-white hover:opacity-90 transition-opacity"
                       >
-                        Play
+                        Play Now
                       </a>
                     </div>
                   </div>
